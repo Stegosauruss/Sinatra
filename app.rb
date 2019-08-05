@@ -17,7 +17,8 @@ end
 
 
 get '/cat' do
-erb(:index)
+  @cat_name = ['Miouw', 'Jerry', 'Tom'].sample
+  erb(:index)
 end
 
 set :session_secret, 'super secret'
