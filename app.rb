@@ -16,8 +16,16 @@ get '/hello_world' do
 end
 
 
-get '/cat' do
+get '/random-cat' do
   @cat_name = ['Miouw', 'Jerry', 'Tom'].sample
+  erb(:index)
+end
+
+get '/named-cat' do
+  p params
+  @name_color = params[:namecolor]|| "#49B0D0"
+  @color = params[:color] || "#86CB1E"
+  @cat_name = params[:name]
   erb(:index)
 end
 
