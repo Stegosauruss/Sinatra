@@ -17,11 +17,7 @@ end
 
 
 get '/cat' do
-
-  "<div style = 'border: 3px dashed red; max-width: 400px' >
-  <img style = 'width: 400px'src='http://bit.ly/1eze8aE'>
- </div>"
-
+erb(:index)
 end
 
 set :session_secret, 'super secret'
