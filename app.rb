@@ -15,17 +15,20 @@ get '/hello_world' do
   "Hello, world!"
 end
 
+get '/cat-form' do
+  erb :cat_form
+end
 
 get '/random-cat' do
-  @cat_name = ['Miouw', 'Jerry', 'Tom'].sample
+  @name = ['Miouw', 'Jerry', 'Tom'].sample
   erb(:index)
 end
 
-get '/named-cat' do
+post '/named-cat' do
   p params
   @name_color = params[:namecolor]|| "#49B0D0"
   @color = params[:color] || "#86CB1E"
-  @cat_name = params[:name]
+  @name = params[:name]
   erb(:index)
 end
 
